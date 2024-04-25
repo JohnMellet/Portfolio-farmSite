@@ -1,0 +1,291 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+a,
+li {
+  text-decoration: none;
+  list-style: none;
+}
+
+a:visited {
+  color: white;
+}
+
+body {
+  background-color: #7c898b;
+}
+
+:root {
+  --backGroundColor-main: #262626;
+}
+
+/* #main-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #26262683;
+  background-image: url("farmSiteResources/Cover2.jpg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+} */
+
+#main-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("farmSiteResources/Cover.jpg");
+  opacity: 80%;
+  background-size: cover;
+}
+
+header {
+  background-color: #262626;
+  position: fixed;
+  width: 100%;
+  z-index: 10;
+}
+
+nav {
+  min-height: 15vh;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 3vw;
+}
+
+.nav-list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 60px;
+}
+
+.logo {
+  font-size: 3rem;
+  font-family: "Gambanito", sans-serif;
+  color: white;
+}
+
+nav img {
+  height: 100px;
+  width: 100px;
+}
+
+.nav-link {
+  font-size: 1.8em;
+  font-family: "Gabarito", sans-serif;
+  color: white;
+}
+
+.hamburger {
+  display: none;
+  cursor: pointer;
+}
+
+.bar {
+  display: block;
+  width: 25px;
+  height: 3px;
+  margin: 5px auto;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  background-color: white;
+}
+
+@media (max-width: 768px) {
+  .hamburger {
+    display: block;
+  }
+
+  .hamburger.active .bar:nth-child(2) {
+    opacity: 0;
+  }
+  .hamburger.active .bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+  .hamburger.active .bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+
+  .nav-list {
+    margin-top: 10vh;
+    position: fixed;
+    top: -100%;
+    left: 0;
+    gap: 0;
+    flex-direction: column;
+    background-color: #262626;
+    width: 100%;
+    text-align: center;
+    transition: 0.8s;
+  }
+
+  .nav-item {
+    margin: 16px 0;
+  }
+
+  .nav-list.active {
+    top: 0;
+  }
+}
+
+#main-section {
+  height: 90vh;
+  font-size: 50px;
+  letter-spacing: 4px;
+}
+
+#title-container {
+  background-color: #262626bb;
+  width: 65%;
+  height: 50%;
+  color: white;
+  font-family: "Gabarito", sans-serif;
+  border-radius: 15px;
+  position: relative;
+
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -30%);
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  text-align: center;
+}
+
+.title-text {
+  padding: 0 150px;
+  font-size: 35px;
+  letter-spacing: 2.3px;
+  word-spacing: 2px;
+  line-height: 35px;
+}
+
+#products {
+  height: 100vh;
+  margin-top: 10vh;
+  padding-top: 10vh;
+
+  color: white;
+
+  display: flex;
+  flex-direction: column;
+}
+
+#product-title {
+  height: 20vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Gabarito", sans-serif;
+  font-size: xx-large;
+}
+
+#product-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  height: 70vh;
+}
+
+.product-item {
+  border: 5px solid beige;
+  border-radius: 10px;
+  background-color: #93a3b1;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+
+  height: 70%;
+  width: 19%;
+}
+
+.product-item-image {
+  height: 150px;
+  width: 150px;
+}
+
+#about-us {
+  height: 100vh;
+  padding-top: 20vh;
+}
+
+.about-us-image {
+  border: 5px solid white;
+  border-radius: 10px;
+  height: 400px;
+  width: 400px;
+  transform: rotate(-90deg);
+}
+
+#about-us-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 50px;
+}
+
+#about-us-title-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 20vh;
+}
+
+#about-us-title {
+  font-size: 60px;
+  font-family: "Gabarito", sans-serif;
+  color: white;
+}
+
+#content-about-us-container {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  font-family: "Gabarito", sans-serif;
+  color: white;
+}
+
+.content-section {
+  display: flex;
+  justify-content: space-around;
+}
+
+.about-us-text-container {
+  width: 50%;
+}
+
+.content-section:nth-child(2) .about-us-image {
+  order: 2;
+}
+
+.about-us-text-container {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.about-us-text-title {
+  font-size: xx-large;
+}
+
+.about-us-text {
+  font-size: x-large;
+  letter-spacing: 0.5px;
+  word-spacing: 5px;
+}
