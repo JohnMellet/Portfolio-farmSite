@@ -1,0 +1,257 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --main-background-color: #262626;
+  --secondary-background-color: #7c898b;
+  --tertiary-backgroundd-color: #93a3b1;
+
+  --main-font-color: white;
+  --secondary-font-color: beige;
+}
+
+body {
+  background: var(--main-background-color);
+}
+/* Initial home screen */
+
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
+}
+
+.cattle-entry-container {
+  background-color: var(--secondary-background-color);
+  width: 300px;
+  height: 450px;
+  border: 5px solid white;
+  border-radius: 10px;
+  padding: 20px;
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+  gap: 10px;
+  position: relative; /* this is so child element (cattle-entry-form can be position absolute si it takes it out but relative to its parent*/
+}
+
+.cattle-home {
+  height: 100%;
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+  gap: 10px;
+}
+
+h1 {
+  color: var(--main-font-color);
+  text-align: center;
+  font-size: 2.5em;
+}
+
+.btn {
+  background: rgb(64, 71, 73);
+  background: linear-gradient(
+    90deg,
+    rgba(64, 71, 73, 1) 25%,
+    rgba(68, 80, 92, 1) 61%,
+    rgba(35, 46, 55, 1) 93%
+  );
+  box-shadow: 0 1px 15px white;
+  color: beige;
+  padding: 1em 1.5em;
+  cursor: pointer;
+  border-radius: 10px;
+}
+
+.btn:hover {
+  background: linear-gradient(
+    90deg,
+    rgba(158, 164, 166, 1) 25%,
+    rgba(133, 149, 164, 1) 61%,
+    rgba(107, 113, 117, 1) 93%
+  );
+}
+
+/* custom dropdown */
+
+.custom-select {
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+
+select {
+  box-shadow: 0 1px 15px white;
+  border: 0;
+  font-size: 1.4em;
+  width: 100%;
+  padding: 1em 4em 1em 1.5em;
+  background: rgb(64, 71, 73);
+  background: linear-gradient(
+    90deg,
+    rgba(64, 71, 73, 1) 25%,
+    rgba(68, 80, 92, 1) 61%,
+    rgba(35, 46, 55, 1) 93%
+  );
+  color: white;
+}
+
+.custom-arrow {
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: block;
+  background: var(--main-background-color);
+  height: 100%;
+  width: 4em;
+  pointer-events: none;
+}
+
+.custom-arrow::before,
+.custom-arrow::after {
+  --size: 0.7em;
+
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 0;
+
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.custom-arrow::before {
+  border-left: var(--size) solid transparent;
+  border-right: var(--size) solid transparent;
+  border-top: var(--size) solid #7c898bb2;
+
+  top: 59%;
+}
+
+.custom-arrow::after {
+  border-left: var(--size) solid transparent;
+  border-right: var(--size) solid transparent;
+  border-bottom: var(--size) solid #7c898bb2;
+
+  top: 36%;
+}
+
+/* Cattle Entry Form */
+
+.close-icon {
+  height: 20px;
+  width: 20px;
+}
+
+.cattle-entry-form {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  height: 100%;
+  width: 100%;
+  color: beige;
+}
+
+.hidden {
+  display: none;
+}
+
+.cattle-form-header {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.close-form-btn {
+  cursor: pointer;
+  background: none;
+  border: none;
+}
+
+.cattle-form-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 70%;
+}
+
+.cattle-form-label-title {
+  font-size: 1.5em;
+  font-weight: 600;
+}
+
+.cattle-form-label {
+  font-size: 1em;
+}
+
+.radio-group {
+  width: 100%;
+
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.cattle-form-footer {
+  margin: auto;
+}
+
+.confirm-close-dialog {
+  width: 300px;
+  padding: 2em;
+  text-align: center;
+  margin: 200px auto;
+}
+
+.confirm-close-dialog::backdrop {
+  background: rgba(68, 80, 92, 1);
+  opacity: 0.6;
+}
+
+.confirm-close-dialog p {
+  margin-bottom: 1em;
+}
+
+#cattle-output-container {
+  display: flex;
+  flex-direction: column;
+
+  justify-content: center;
+  align-items: center;
+  margin: 35px;
+  gap: 25px;
+}
+
+.cattle-card {
+  border: 5px solid white;
+  border-radius: 10px;
+  width: 300px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  text-align: center;
+
+  height: 150px;
+}
+
+.cattle-card h2,
+p {
+  color: white;
+}
+
+@media (min-width: 768px) {
+  .cattle-card-container {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+}

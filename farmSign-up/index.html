@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="styles.css" />
+    <script defer src="script.js"></script>
+    <title>Sign-Up Form</title>
+  </head>
+  <body>
+    <div class="background-image-container">
+      <div class="background-container-band">
+        <h1 class="page-title">Mellet Farms</h1>
+      </div>
+    </div>
+    <div class="main-content-container">
+      <div class="main-content-container-items form-text-container">
+        <h2>Sign up</h2>
+        <p>
+          This is not a real online service! You know you need something like
+          this in your life to help you realize your deepest dreams.
+        </p>
+        <p>Sign up now to get started.</p>
+        <p>You know you want to.</p>
+      </div>
+      <div class="main-content-container-items form-content-container">
+        <div class="input-container">
+        <p>Lets do this!</p>
+        <form id="sign-up-form">
+            <div class="form-row">
+              <div class="form-styles">
+                <label for="first-name">First Name</label
+                ><input id="first-name" type="text" name="firstName" />
+                <p class="error-text"></p>
+              </div>
+              <div class="form-styles">
+                <label for="last-name">Last Name</label
+                ><input id="last-name" type="text" name="lastName" />
+                <p class="error-text"></p>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-styles">
+                <label for="user-email">Email</label
+                ><input id="user-email" type="email" name="userEmail" />
+                <p class="error-text"></p>
+              </div>
+
+              <div class="form-styles">
+                <label for="user-phone-number">Number</label
+                ><input id="user-phone-number" type="text" />
+                <p class="error-text"></p>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-styles">
+                <label for="user-password">Password</label
+                ><input id="user-password" type="password" name="passwords" />
+                <p class="error-text"></p>
+              </div>
+
+              <div class="form-styles">
+                <label for="user-password-confirm">Confirm Password</label
+                ><input
+                  id="user-password-confirm"
+                  type="password"
+                  name="passwords"
+                />
+                <p class="error-text"></p>
+              </div>
+            </div>
+            </div>
+          <div class="form-button-container">
+            <button type="submit" class="btn form-sumbit-button">
+              Create Account
+            </button>
+            <p>Already have an account? <a href="" class="">Log in</a></p>
+          </div>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>

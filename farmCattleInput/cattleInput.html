@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="stylesCattleInput.css" />
+
+    <title>Cattle Input</title>
+  </head>
+  <body>
+    <main>
+      <!-- Entry call to action -->
+      <div class="cattle-entry-container">
+        <div class="cattle-home">
+          <h1>Enter Cattle Data</h1>
+          <button id="add-entry-btn" class="btn large-btn">
+            Add new entry
+          </button>
+          <div class="custom-select">
+            <select>
+              <option value="all">All</option>
+              <option value="male">Male</option>
+              <option value="female">Female</option>
+              <option value="branded">Branded</option>
+              <option value="tagged">Tagged</option>
+            </select>
+            <span class="custom-arrow"></span>
+          </div>
+        </div>
+        <form class="cattle-entry-form hidden" id="cattle-entry-form">
+          <div class="cattle-form-header">
+            <button
+              id="close-form-btn"
+              class="close-form-btn"
+              type="button"
+              aria-label="close"
+            >
+              <svg
+                class="close-icon"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 48 48"
+                width="48px"
+                height="48px"
+              >
+                <path
+                  fill="#F44336"
+                  d="M21.5 4.5H26.501V43.5H21.5z"
+                  transform="rotate(45.001 24 24)"
+                />
+                <path
+                  fill="#F44336"
+                  d="M21.5 4.5H26.5V43.501H21.5z"
+                  transform="rotate(135.008 24 24)"
+                />
+              </svg>
+            </button>
+          </div>
+          <div class="cattle-form-body">
+            <label class="cattle-form-label-title" for="cattle-name"
+              >Enter Name:
+            </label>
+            <input
+              type="text"
+              class="cattle-form-control"
+              id="cattle-name"
+              value=""
+            />
+
+            <div class="cattle-form-label-title">Gender:</div>
+            <div class="radio-group">
+              <label for="male" class="cattle-form-label">
+                <input
+                  type="radio"
+                  id="male"
+                  value="male"
+                  name="gender"
+                  class="cattle-form-control"
+                />
+                Male
+              </label>
+              <label for="female" class="cattle-form-label">
+                <input
+                  type="radio"
+                  id="female"
+                  value="female"
+                  name="gender"
+                  class="cattle-form-control"
+                />
+                Female
+              </label>
+            </div>
+
+            <div class="cattle-form-label-title">Branded:</div>
+            <div class="radio-group">
+              <label for="branded" class="cattle-form-label">
+                <input
+                  type="radio"
+                  id="branded"
+                  value="branded"
+                  name="brand"
+                  class="cattle-form-control"
+                />
+                Yes
+              </label>
+              <label for="unbranded" class="cattle-form-label">
+                <input
+                  type="radio"
+                  id="unbranded"
+                  value="unbranded"
+                  name="brand"
+                  class="cattle-form-control"
+                />
+                No
+              </label>
+            </div>
+
+            <div class="cattle-form-label-title">Tagged:</div>
+            <div class="radio-group">
+              <label for="tagged" class="cattle-form-label">
+                <input
+                  type="radio"
+                  id="tagged"
+                  value="tagged"
+                  name="tagging"
+                  class="cattle-form-control"
+                />
+                Yes
+              </label>
+              <label for="not-tagged" class="cattle-form-label">
+                <input
+                  type="radio"
+                  id="not-tagged"
+                  value="not-tagged"
+                  name="tagging"
+                  class="cattle-form-control"
+                />
+                No
+              </label>
+            </div>
+          </div>
+          <div class="cattle-form-footer">
+            <button id="cattle-submit-btn" class="btn large-btn" type="submit">
+              Add Cattle
+            </button>
+          </div>
+        </form>
+        <dialog class="confirm-close-dialog">
+          <form method="dialog">
+            <p class="dialog-text">Discard unsaved changes?</p>
+            <div class="clos-dialog-btn-container">
+              <button id="cancel-btn" class="btn small-btn">Cancel</button>
+              <button id="discard-btn" class="btn small-btn">Discard</button>
+            </div>
+          </form>
+        </dialog>
+      </div>
+
+      <!-- Card Display -->
+      <div id="cattle-output-container"></div>
+    </main>
+    <script src="scriptCattleInput.js"></script>
+  </body>
+</html>

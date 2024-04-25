@@ -1,0 +1,144 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  flex-direction: row;
+}
+
+.background-image-container {
+  background-image: url("https://raw.githubusercontent.com/JohnMellet/Img-hosting/main/PubIMG/pic8.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  min-height: 100vh;
+  flex: 1;
+}
+
+.main-content-container {
+  min-height: 100vh;
+  flex: 2;
+  background-color: #f5f5f5;
+}
+
+.background-container-band {
+  background: rgba(105, 105, 105, 0.596);
+  color: white;
+  margin-top: 300px;
+  min-height: 150px;
+
+  font-size: 1.5em;
+  font-weight: 600;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.page-title {
+  text-align: center;
+}
+
+.main-content-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.form-text-container {
+  flex: 0.5;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  font-size: 1.2em;
+}
+
+.form-content-container {
+  display: flex;
+  flex-direction: column;
+  background-color: #fcfcfc;
+}
+
+.input-container {
+  width: 100%;
+  padding: 30px 50px;
+  box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.2);
+  position: relative;
+}
+
+.form-row {
+  display: flex;
+  gap: 100px;
+  margin-top: 20px;
+}
+
+label {
+  display: flex;
+}
+
+input {
+  height: 45px;
+  width: 300px;
+
+  border: 1px solid rgba(128, 128, 128, 0.486);
+  border-radius: 5px;
+}
+
+input:focus {
+  outline: 2px solid rgb(82, 126, 223);
+  box-shadow: 0 0 5px rgb(151, 173, 221);
+}
+
+.error-text {
+  color: rgb(245, 22, 22);
+  font-size: 0.9em;
+}
+
+.error-border {
+  outline: 2px solid rgb(180, 31, 4);
+  box-shadow: 0 0 5px rgb(231, 67, 38);
+}
+
+.valid-border {
+  border: none;
+  outline: 2px solid rgb(75, 226, 15);
+  box-shadow: 0 0 5px rgb(131, 248, 85);
+}
+
+.btn {
+  padding: 30px 40px;
+  background-color: #25332a;
+  color: white;
+  font-size: 1.8em;
+  font-weight: bolder;
+  border-radius: 8px;
+  margin: 43px;
+  box-shadow: 0px 5px 5px darkgrey;
+}
+
+a {
+  text-decoration: none;
+  color: forestgreen;
+  font-size: 1.8em;
+  margin-left: 15px;
+}
+
+a:visited {
+  color: #25332a;
+}
+
+.form-button-container {
+  background-color: #f5f5f5;
+}
+
+.form-button-container p {
+  font-size: 1.4em;
+  margin-left: 48px;
+}
