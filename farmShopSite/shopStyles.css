@@ -20,6 +20,10 @@ body {
   background-color: #7c898b;
 }
 
+.hide {
+  display: none;
+}
+
 header {
   background-color: #262626;
   position: fixed;
@@ -89,6 +93,7 @@ main {
 
   position: relative;
   top: 130px;
+  min-height: calc(100vh - 130px);
 }
 
 .shop-item-nav {
@@ -113,7 +118,7 @@ main {
   min-height: 450px;
   border: 3px solid orangered;
   border-radius: 5px;
-  background-color: white;
+  background-color: #93a3b1;
   color: white;
   margin: 25px 0;
 
@@ -127,6 +132,7 @@ main {
   display: flex;
   justify-content: space-around;
   align-items: center;
+  flex-wrap: wrap;
 
   color: white;
   font-size: 1.2em;
@@ -134,12 +140,46 @@ main {
 }
 
 .product-select {
+  display: flex;
   position: relative;
   border: 2px solid white;
-  padding: 15px 30px;
+  height: 50px;
+  width: 200px;
+  justify-content: center;
+  align-items: center;
 }
 
-.shop-item-nav ul {
+.nav-selection-list {
   position: absolute;
-  width: 100%;
+  padding-left: 0;
+  top: 50px;
+
+  border: 2px solid white;
+  background-color: #262626;
+  text-align: center;
+  width: 200px;
+}
+
+.dropdown-option {
+  padding: 5px;
+  border-bottom: 2px double white;
+}
+
+.dropdown-option:hover {
+  color: black;
+  background-color: white;
+}
+
+.nav-btn-container {
+  width: 600px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.nav-btn {
+  padding: 15px 50px;
+  color: white;
+  border: 2px solid orangered;
+  border-radius: 5px;
+  background-color: #27ae60;
 }
