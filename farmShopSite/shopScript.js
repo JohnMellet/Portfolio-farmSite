@@ -1,6 +1,8 @@
 const storeNavDropdown = document.querySelector(".dropdown-placeholder");
 const storeNavLinks = document.querySelector(".nav-selection-list");
 const shopItemContainer = document.querySelector(".shop-item-container");
+const editButton = document.querySelector(".edit-btn");
+const deleteButton = document.querySelector(".delete-btn");
 
 const storeProductsArray = [
   { id: 1, name: "Product 1", price: 10.99 },
@@ -34,6 +36,7 @@ const updateStoreContainer = () => {
 
   storedProducts.forEach((product) => {
     const productCard = document.createElement("div");
+    productCard.setAttribute("id", product.id);
     productCard.classList.add("product-card");
     productCard.innerHTML = `
       <img
@@ -41,7 +44,7 @@ const updateStoreContainer = () => {
       />  
       <p class="product-title">${product.name}</p>
       <p class="product-price">$${product.price}</p>
-      <button type="button">Add to cart</button>
+      <button type="button" class="product-btn">Add to cart</button>
       `;
     shopItemContainer.appendChild(productCard);
   });
@@ -62,8 +65,32 @@ const addProductCard = (name, price) => {
   localStorage.setItem("storeProducts", JSON.stringify(storeProductsArray));
 };
 
+const editShopProducts = () => {};
+
+const deleteShopProducts = () => {};
+
 storeNavDropdown.addEventListener("click", function () {
   storeNavLinks.classList.toggle("hide");
+});
+
+editButton.addEventListener("click", () => {
+  const shopButtons = document.querySelectorAll(".product-btn");
+  shopButtons.forEach((button) => {
+    button.textContent = "Edit";
+    button.dataset.action = "edit";
+  });
+});
+
+deleteButton.addEventListener("click", () => {
+  const shopButtons = document.querySelectorAll(".product-btn");
+  shopButtons.forEach((button) => {
+    button.textContent = "Delete";
+    button.dataset.action = "delete";
+  });
+});
+
+document.addEventListener("click", (event) => {
+  const buttonClicked = event.target;
 });
 
 window.addEventListener("load", function () {
