@@ -65,7 +65,23 @@ const addProductCard = (name, price) => {
   localStorage.setItem("storeProducts", JSON.stringify(storeProductsArray));
 };
 
-const editShopProducts = () => {};
+const editShopProducts = (productId) => {
+  const productCard = document.getElementById(productId);
+  const productName = productCard.querySelector(".product-title").textContent;
+  const productPrice = productCard
+    .querySelector(".product-price")
+    .textContent.replace("$", "");
+
+  productCard.innerHTML = `
+    <form id="editForm" class="edit-form">
+      <label for="editName">Name:</label>
+      <input type="text" id="editName" value="${productName}" required>
+      <label for="editPrice">Price:</label>
+      <input type="text" id="editPrice" value="${productPrice}" required>
+      <button type="submit">Save</button>
+    </form>
+    `;
+};
 
 const deleteShopProducts = () => {};
 
@@ -91,11 +107,16 @@ deleteButton.addEventListener("click", () => {
 
 document.addEventListener("click", (event) => {
   const buttonClicked = event.target;
+
+  const selectedProductCard = buttonClicked.closest(".product-card");
+  const productCardId = selectedProductCard.id;
+
   if (buttonClicked.dataset.action === "edit") {
-    editShopProducts();
+    editShopProducts(productCardId);
+    console.log(productCardId);
   }
 
-  if (target.dataset.action === "delete") {
+  if (buttonClicked.dataset.action === "delete") {
     deleteShopProducts();
   }
 });
