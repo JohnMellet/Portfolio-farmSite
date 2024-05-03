@@ -91,6 +91,13 @@ deleteButton.addEventListener("click", () => {
 
 document.addEventListener("click", (event) => {
   const buttonClicked = event.target;
+  if (buttonClicked.dataset.action === "edit") {
+    editShopProducts();
+  }
+
+  if (target.dataset.action === "delete") {
+    deleteShopProducts();
+  }
 });
 
 window.addEventListener("load", function () {
