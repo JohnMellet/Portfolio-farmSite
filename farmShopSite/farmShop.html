@@ -62,48 +62,26 @@
 
           <div class="nav-btn-container">
             <button class="nav-btn">Add</button>
+            <form id="addProductForm">
+              <label for="productName">Product Name:</label>
+              <input type="text" id="productName" name="productName" required />
+
+              <label for="productPrice">Product Price:</label>
+              <input
+                type="text"
+                id="productPrice"
+                name="productPrice"
+                required
+              />
+
+              <button type="submit">Add Product</button>
+            </form>
+
             <button class="nav-btn">Edit</button>
             <button class="nav-btn">Delete</button>
           </div>
         </div>
-        <div class="shop-item-container">
-          <div class="product-card">
-            <img />
-            <p class="product-title">Product</p>
-            <p class="product-price">$200</p>
-            <button type="button">Add to cart</button>
-          </div>
-          <div class="product-card">
-            <img />
-            <p class="product-title">Product</p>
-            <p class="product-price">$200</p>
-            <button type="button">Add to cart</button>
-          </div>
-          <div class="product-card">
-            <img />
-            <p class="product-title">Product</p>
-            <p class="product-price">$200</p>
-            <button type="button">Add to cart</button>
-          </div>
-          <div class="product-card">
-            <img />
-            <p class="product-title">Product</p>
-            <p class="product-price">$200</p>
-            <button type="button">Add to cart</button>
-          </div>
-          <div class="product-card">
-            <img />
-            <p class="product-title">Product</p>
-            <p class="product-price">$200</p>
-            <button type="button">Add to cart</button>
-          </div>
-          <div class="product-card">
-            <img />
-            <p class="product-title">Product</p>
-            <p class="product-price">$200</p>
-            <button type="button">Add to cart</button>
-          </div>
-        </div>
+        <div class="shop-item-container"></div>
       </div>
     </main>
   </body>
