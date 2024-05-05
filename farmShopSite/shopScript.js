@@ -78,7 +78,7 @@ const editShopProducts = (productId) => {
       <input type="text" id="editName" value="${productName}" required>
       <label for="editPrice">Price:</label>
       <input type="text" id="editPrice" value="${productPrice}" required>
-      <button type="submit">Save</button>
+      <button id="editSubmitBtn" type="submit">Save</button>
     </form>
     `;
 };
@@ -113,7 +113,6 @@ document.addEventListener("click", (event) => {
 
   if (buttonClicked.dataset.action === "edit") {
     editShopProducts(productCardId);
-    console.log(productCardId);
   }
 
   if (buttonClicked.dataset.action === "delete") {
@@ -121,6 +120,17 @@ document.addEventListener("click", (event) => {
   }
 });
 
-window.addEventListener("load", function () {
-  updateStoreContainer();
+const editSubmitBtn = document.getElementById("editSubmitBtn");
+editSubmitBtn.addEventListener("click", (e) => {
+  e.preventDefault();
+
+  const editNameInput = document.getElementById("editName").value.trim();
+  const editPriceInput = document.getElementById("editPrice").value.trim();
+  const storedProducts = JSON.parse(localStorage.getItem("storeProducts"));
+
+  // get index of current card we are working on and update
+  // its name and price valuesa witht hat of the suewr input
+  //  easy right? you would of thought soo ahha ehre we go!
 });
+
+updateStoreContainer();
